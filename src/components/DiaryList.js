@@ -7,7 +7,7 @@ const FncOrderMemu = ({ onChange }) => {
   return (
     <select className="FncMemu" onChange={(e) => onChange(e.target.value)}>
       <option key={0} value="lastest">
-        최신순s
+        최신순
       </option>
       <option key={1} value="popular">
         인기순
