@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DiaryStateContext } from "../App";
+import DiaryItem from "./DiaryItem";
 import MyButton from "./MyButton";
 
 const FncOrderMemu = ({ onChange }) => {
@@ -79,15 +80,7 @@ const DiaryList = () => {
         </div>
 
         {sortList().map((obj) => (
-          <div key={obj.id}>
-            {obj.content}
-            <img
-              src={
-                process.env.PUBLIC_URL + `../assets/emotion${obj.emotion}.png`
-              }
-              alt="이미지 불러오는 중..."
-            />
-          </div>
+          <DiaryItem key={obj.id} {...obj} />
         ))}
       </div>
     </>
