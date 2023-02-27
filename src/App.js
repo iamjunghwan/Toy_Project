@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Edit from "./pages/Edit";
 import Diary from "./pages/Diary";
 import New from "./pages/New";
+import ErrorPage from "./pages/ErrorPage";
 
 const reducer = (state, action) => {
   let newState = [];
@@ -55,7 +56,7 @@ const dummyData = [
 function App() {
   const [data, dispatch] = useReducer(reducer, dummyData);
 
-  const dataId = useRef(0);
+  const dataId = useRef(6);
 
   const onCreate = (date, content, emotion) => {
     dispatch({
@@ -96,8 +97,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/new" element={<New />} />
-              <Route path="/edit" element={<Edit />} />
-              <Route path="/diary:id" element={<Diary />} />
+              <Route path="/edit/:id" element={<Edit />} />
+              <Route path="/diary/:id" element={<Diary />} />
+              <Route path="/ErrorPage" element={<ErrorPage />} />
             </Routes>
           </div>
         </BrowserRouter>
