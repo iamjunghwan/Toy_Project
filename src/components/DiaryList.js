@@ -1,10 +1,11 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DiaryStateContext } from "../App";
 import DiaryItem from "./DiaryItem";
 import MyButton from "./MyButton";
 
-const FncOrderMemu = ({ onChange }) => {
+const FncOrderMemu = React.memo(({ onChange }) => {
+  console.log("FncOrderMemu");
   return (
     <select className="FncMemu" onChange={(e) => onChange(e.target.value)}>
       <option key={0} value="lastest">
@@ -15,9 +16,10 @@ const FncOrderMemu = ({ onChange }) => {
       </option>
     </select>
   );
-};
+});
 
-const FncEmotionMemu = ({ diaryList, onChange }) => {
+const FncEmotionMemu = React.memo(({ diaryList, onChange }) => {
+  //console.log("FncEmotionMemu");
   return (
     <select className="FncMemu" onChange={(e) => onChange(e.target.value)}>
       <option key={0} value="all">
@@ -27,11 +29,11 @@ const FncEmotionMemu = ({ diaryList, onChange }) => {
       <option key={2}>{"bad"}</option>
     </select>
   );
-};
+});
 
-const DiaryList = () => {
+const DiaryList = ({ diaryList }) => {
   const navigator = useNavigate();
-  const diaryList = useContext(DiaryStateContext);
+  //const diaryList = useContext(DiaryStateContext);
 
   const [sortType, setSortType] = useState("lastest");
 

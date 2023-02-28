@@ -20,21 +20,21 @@ const Home = () => {
         curDate.getMonth(),
         1
       ).getTime();
+
       const lastDay = new Date(
         curDate.getFullYear(),
         curDate.getMonth() + 1,
-        0
+        0,
+        23,
+        59,
+        59
       ).getTime();
 
       setData(
-        diaryList.filter((ele) => firstDay <= ele.date && lastDay >= ele.date)
+        diaryList.filter((ele) => firstDay <= ele.date && ele.date <= lastDay)
       );
     }
   }, [diaryList, curDate]);
-
-  useEffect(() => {
-    
-  }, [data]);
 
   const onLeftClick = () => {
     setCurDate(
@@ -69,7 +69,7 @@ const Home = () => {
           />
         }
       ></MyHeader>
-      <DiaryList></DiaryList>
+      <DiaryList diaryList={data}></DiaryList>
     </div>
   );
 };
