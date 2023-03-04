@@ -11,6 +11,12 @@ const Diary = () => {
   const { id } = useParams(); //react custom hook
   const [originData, setOriginData] = useState();
   const diaryList = useContext(DiaryStateContext);
+
+  useEffect(()=>{
+    const titEle = document.getElementsByTagName('title')[0];
+    titEle.innerHTML = `토이프로젝트 - ${id}번 일기`;
+  },[]);
+
   useEffect(() => {
     if (diaryList.length >= 1) {
       const targetList = diaryList.find(

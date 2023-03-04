@@ -4,7 +4,7 @@ import MyButton from "./MyButton";
 
 import MyHeader from "../components/MyHeader";
 import EmotionItem from "./EmotionItem";
-import { DiaryDispatchContext } from "../App";
+import { DiaryDispatchContext ,DiaryStateContext } from "../App";
 
 import { getStringDate } from "../util/date.js";
 import { emotionList } from "../util/emotion.js";
@@ -17,6 +17,7 @@ const DiaryEditor = ({ isEdit, originData }) => {
   const [emotion, setEmotion] = useState(3);
 
   const { onCreate, onEdit } = useContext(DiaryDispatchContext);
+  const diaryList = useContext(DiaryStateContext);
 
   const handleClick = (emotion_id) => {
     setEmotion(emotion_id);
@@ -27,6 +28,15 @@ const DiaryEditor = ({ isEdit, originData }) => {
       contentRef.current.focus();
       return;
     }
+
+    // const chkDate = diaryList.filter((ele) => new Date(ele.date).getFullYear()+'-'+0+( new Date(ele.date).getMonth()+1)+'-'+'0'+new Date(ele.date).getDate() === date);
+
+    // if(chkDate.length > 0) {
+    //   window.confirm(
+    //     '동일한 날짜에 이미 등록 된 일기가 존재 합니다.'
+    //   )
+    //   return false;
+    // }
 
     if (
       window.confirm(

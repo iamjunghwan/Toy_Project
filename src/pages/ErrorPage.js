@@ -1,7 +1,13 @@
+import {useEffect} from 'react'
 import { useNavigate } from "react-router-dom";
 
 const ErrorPage = () => {
   const navigate = useNavigate();
+  
+  useEffect(()=>{
+    const titEle = document.getElementsByTagName('title')[0];
+    titEle.innerHTML = `토이프로젝트 - 에러 페이지`;
+  },[]);
 
   const goHome = () => {
     navigate("/", { replace: true });

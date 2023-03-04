@@ -5,7 +5,6 @@ import DiaryItem from "./DiaryItem";
 import MyButton from "./MyButton";
 
 const FncOrderMemu = React.memo(({ onChange }) => {
-  console.log("FncOrderMemu");
   return (
     <select className="FncMemu" onChange={(e) => onChange(e.target.value)}>
       <option key={0} value="lastest">
@@ -19,7 +18,6 @@ const FncOrderMemu = React.memo(({ onChange }) => {
 });
 
 const FncEmotionMemu = React.memo(({ diaryList, onChange }) => {
-  //console.log("FncEmotionMemu");
   return (
     <select className="FncMemu" onChange={(e) => onChange(e.target.value)}>
       <option key={0} value="all">
@@ -33,7 +31,7 @@ const FncEmotionMemu = React.memo(({ diaryList, onChange }) => {
 
 const DiaryList = ({ diaryList }) => {
   const navigator = useNavigate();
-  //const diaryList = useContext(DiaryStateContext);
+
 
   const [sortType, setSortType] = useState("lastest");
 

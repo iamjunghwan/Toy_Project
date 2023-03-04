@@ -11,7 +11,12 @@ const Home = () => {
 
   const [curDate, setCurDate] = useState(new Date());
 
-  const headText = `${curDate.getFullYear()}년   ${curDate.getMonth() + 1}월`;
+  const headText = `${curDate.getFullYear()}년1   ${curDate.getMonth() + 1}월`;
+  
+  useEffect(()=>{
+    const titEle = document.getElementsByTagName('title')[0];
+    titEle.innerHTML = `토이프로젝트`;
+  },[]);
 
   useEffect(() => {
     if (diaryList.length >= 1) {
