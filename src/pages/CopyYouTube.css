@@ -1,0 +1,78 @@
+.video-container {
+    margin-top: 100px;
+    display: flex; /* 비디오들을 가로로 배치 */
+    gap: 20px; /* 비디오 간 간격 */
+    justify-content: center; /* 전체 비디오를 중앙 정렬 */
+  }
+  
+  .video-wrapper {
+    position: relative; /* 시간 표시를 위한 기준 설정 */
+    display: inline-block;
+    width: 300px; /* 각 비디오의 너비 */
+  }
+  .custom-video {
+    width: 100%; /* 비디오 크기를 부모 컨테이너에 맞춤 */
+    height: auto; /* 비율 유지 */
+  }
+  .custom-video::-webkit-media-controls-time-remaining-display,
+  .custom-video::-webkit-media-controls-current-time-display {
+    display: none; /* 시간을 숨김 */
+  }
+
+.duration {
+    position: absolute;
+  bottom: 10px; /* 비디오 하단에서 10px */
+  right: 10px; /* 비디오 우측에서 10px */
+  background-color: rgba(0, 0, 0, 0.7); /* 반투명 배경 */
+  color: white; /* 텍스트 색상 */
+  font-size: 14px; /* 텍스트 크기 */
+  padding: 5px 8px; /* 여백 */
+  border-radius: 3px; /* 모서리 둥글게 */
+  pointer-events: none; /* 시간 표시가 클릭되지 않도록 */
+}
+
+  .innerDiv {
+    position: relative;
+    height: 0;
+    padding-Top: 100%;
+    border-Radius: 8px;
+    background-Position: 50%;
+    background-Size: 100% auto;
+  }
+
+  .innerSpan {
+    box-Sizing: border-box;
+    display: block;
+    overflow: hidden;
+    width: initial;
+    height: initial;
+    opacity: 1;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    inset: 0px;
+  }
+
+  .innerImg {
+
+      background-Size: cover;
+      background-Repeat: no-repeat;
+      position: absoulte;
+      box-Sizing: border-box;
+      padding: 0px;
+      border: none;
+      width: 0px;
+      height: 0px;
+    
+      inset: 0px;
+      min-Width: 100%;
+      max-Width: 100%;
+      min-Height: 100%;
+      max-Height: 100%;
+      object-Fit: cover;
+      display: block;
+
+  }

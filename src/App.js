@@ -9,6 +9,11 @@ import Edit from "./pages/Edit";
 import Diary from "./pages/Diary";
 import New from "./pages/New";
 import ErrorPage from "./pages/ErrorPage";
+import Test from "./pages/Test";
+import IntersectionObserver from "./pages/IntersectionObserver";
+import Bubbling from "./pages/Bubbling";
+import FocusTrap from "./pages/FocusTrap";
+import CopyYouTube from "./pages/CopyYouTube";
 
 const reducer = (state, action) => {
   let newState = [];
@@ -52,7 +57,7 @@ function App() {
       const diaryList = JSON.parse(localData).sort(
         (a, b) => parseInt(b.id) - parseInt(a.id)
       );
-      if(localData.length >= 1){
+      if (localData.length >= 1) {
         diaryList.current = parseInt(diaryList[0].id) + 1;
         dispatch({ type: "INIT", data: diaryList });
       }
@@ -99,10 +104,18 @@ function App() {
           <div className="App">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/test" element={<Test />} />
               <Route path="/new" element={<New />} />
               <Route path="/edit/:id" element={<Edit />} />
               <Route path="/diary/:id" element={<Diary />} />
               <Route path="/ErrorPage" element={<ErrorPage />} />
+              <Route
+                path="/IntersectionObserver"
+                element={<IntersectionObserver />}
+              />
+              <Route path="/bubbling" element={<Bubbling />} />
+              <Route path="/focusTrap" element={<FocusTrap />} />
+              <Route path="/copyYouTube" element={<CopyYouTube />} />
             </Routes>
           </div>
         </BrowserRouter>

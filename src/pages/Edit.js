@@ -15,7 +15,7 @@ const Edit = () => {
   },[]);
 
   useEffect(() => {
-    if (diaryList.length > 1) {
+    if (diaryList.length > 0) {
       const targetList = diaryList.find(
         (ele) => parseInt(ele.id) === parseInt(id)
       );

@@ -1,0 +1,38 @@
+.IApp {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .Iheader {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .Ititle {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-wrap: wrap; /* 여러 줄로 감쌀 수 있게 설정 */
+    gap: 20px; /* 이미지들 간의 간격 */
+    justify-content: center; /* 이미지를 가로로 중앙 정렬 */
+  }
+  
+  .image-item {
+    width: 30%; /* 한 줄에 3개의 이미지가 들어가도록 너비 설정 */
+    height: 200px; /* 이미지 높이 */
+    overflow: hidden;
+  }
+  
+  .image-item img {
+    width: 100%; /* 이미지를 컨테이너 너비에 맞게 조정 */
+    height: 100%; /* 이미지 높이도 100%로 맞추기 */
+    object-fit: cover; /* 이미지 비율을 유지하면서 영역을 채우기 */
+  }
+  
+  .trigger {
+    height: 700px; /* 트리거 영역 */
+    width: 100%;
+  }
